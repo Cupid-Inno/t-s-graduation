@@ -1,107 +1,303 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graduation Celebration</title>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<link rel="stylesheet" href="index.css">
-</head>
+html, body{
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #0b0b10;
+    color: white;
+}
 
-<body>
+/* ================= LOADER ================= */
 
-<!-- LOADER -->
-<div id="loader">
-    <div class="loader-content">
-        <div class="cap">🎓</div>
-        <h1>Preparing Celebration...</h1>
+#loader,
+#transitionLoader{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
-        <div class="loading-bar">
-            <div class="loading-fill"></div>
-        </div>
+#loader{
+     background: #0f0f0f;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
 
-        <p id="percentage">0%</p>
-    </div>
-</div>
+#transitionLoader{
+    background: radial-gradient(circle, #0f0f1a, #000);
+}
 
-<!-- HERO -->
-<section class="hero">
+.hidden{
+    display: none !important;
+}
 
-    <!-- background decorations -->
-    <div class="floating floating1"></div>
-    <div class="floating floating2"></div>
-    <div class="floating floating3"></div>
+.loader-content{
+    text-align: center;
+}
 
-    <div class="hero-content">
+.cap{
+    font-size: 4.5rem;
+    animation: spin 2s linear infinite;
+}
 
-        <h3 class="small-text">CLASS OF 2026 🎓</h3>
+.loading-bar{
+    width: 260px;
+    height: 12px;
+    background: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px auto;
+}
 
-        <h1>Congratulations, <br> Tahera</h1>
+.loading-fill{
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(to right, #a855f7, #c084fc);
+}
 
-        <p class="hero-message">
-            From sleepless nights to success,
-            your hard work finally paid off.
-        </p>
+#percentage, #percentage2{
+    color: #a855f7;
+}
 
-        <button class="hero-btn">Unlock Memory ✨</button>
+/* ================= HERO ================= */
 
-    </div>
-</section>
+.hero{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
 
-<!-- TRANSITION -->
-<div id="transitionLoader" class="hidden">
-    <div class="loader-content">
-        <div class="cap">🎓</div>
-        <h1>Unlocking Memory...</h1>
 
-        <div class="loading-bar">
-            <div class="loading-fill" id="fill2"></div>
-        </div>
+.hero-content{
+    z-index: 2;
+}
 
-        <p id="percentage2">0%</p>
-    </div>
-</div>
+.small-text{
+    color: #a855f7;
+}
 
-<!-- JOURNEY -->
-<section class="journey hidden" id="journeyPage">
+.hero h1{
+    font-size: 2.8rem;
+}
 
-   <div class="decor">
-    <span class="balloon b1">🎈 🎈 🎈</span>
-    <span class="balloon b2">🎈 🎈 🎈</span>
-    <span class="balloon b3">🎈 🎈 🎈</span>
+.hero-message{
+    color: #ccc;
+    margin: 10px 0;
+}
 
-    <span class="flower f1">🌸 🌸 🌸 </span>
-    <span class="flower f2">🌸 🌸 🌸</span>
-    <span class="flower f3">🌸 🌸 🌸</span>
-</div>
+.hero-btn{
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #a855f7, #6d28d9);
+    color: white;
+}
 
-    <div class="journey-card">
-             <h1>< PURPLE HEART ></h1><br><br>
-             <br>
+/* floating background */
+.floating{
+    position: absolute;
+    filter: blur(60px);
+    opacity: 0.4;
+    border-radius: 50%;
+}
 
-        <p>
-            I've seen the hard work, stress, and moments
-            where giving up felt easier.<br>
+.floating1{
+    width: 200px;
+    height: 200px;
+    background: #a855f7;
+    top: 10%;
+    left: 10%;
+}
 
-            But you didn't.<br><br>
+.floating2{
+    width: 180px;
+    height: 180px;
+    background: #6d28d9;
+    bottom: 10%;
+    right: 10%;
+}
 
-            I'll always respect your strength.<br><br>
+.floating3{
+    width: 180px;
+    height: 180px;
+    background: #c084fc;
+    top: 50%;
+    left: 50%;
+}
 
-            Wishing you everything beautiful ahead.
-            Cheers to a new life, friends and memories.
-        </p>
+/* ================= JOURNEY ================= */
 
-        <h2>You deserve this 🎓</h2>
+.journey{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #0b0b10;
+    z-index: 10;
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(80, 5, 103), black);
+}
 
-        <button class="close-btn">Close Memory ✨</button>
+.journey-card{
+    width: 90%;
+    height: 400px;
+    max-width: 600px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(168,85,247,0.3);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    backdrop-filter: blur(10px);
+}
+.journey-card h1{
+    background: #a855f7;
+    border-radius: 30px;
+     color: rgb(249, 246, 250);
+}
 
-    </div>
 
-</section>
+/* BUTTON ALWAYS CENTER */
+.close-btn{
+    margin-top: 40px;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    background: rgba(144, 53, 230, 0.2);
+    color: white;
+}
+.close-btn:hover{
+    color: #f8f8f8;
+    background-color: #a241df;
+}
 
-<audio id="clickSound" src="music/click.mp3"></audio>
 
-<script src="index.js"></script>
+.balloons,
+.flowers{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
 
-</body>
-</html>
+/* fake balloons */
+.balloons::before{
+    content: "🎈 🎈 🎈 🎈 🎈";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    opacity: 0.3;
+}
+
+/* fake flowers */
+.flowers::before{
+    content: "🌸 🌸 🌸 🌸 🌸 ";
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-29%);
+    font-size: 4rem;
+    opacity: 0.3;
+}
+
+/* animation */
+@keyframes spin{
+    to{ transform: rotate(360deg); }
+}
+/* ================= DECORATIONS ================= */
+
+.decor{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* base balloon/flower style */
+.balloon, .flower{
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+    animation: floatUp 8s linear infinite;
+}
+
+/* balloon positions + timing */
+.b1{
+   bottom: 0%;
+    left: 10%;
+    animation-duration: 2s;
+    animation-delay: 0s;
+}
+
+.b2{
+    top: 20%;
+    left: 50%;
+    animation-duration: 9s;
+    animation-delay: 2s;
+}
+
+.b3{
+    top: 20%;
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+/* flower positions + timing */
+.f1{
+    top: 20%;
+    left: 20%;
+    animation-duration: 8s;
+    animation-delay: 0.5s;
+}
+
+.f2{
+    top: 20%;
+    left: 60%;
+    animation-duration: 10s;
+    animation-delay: 2.5s;
+}
+
+.f3{
+    top: 20%;
+    left: 85%;
+    animation-duration: 7.5s;
+    animation-delay: 1.2s;
+}
+
+/* animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.9);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 2;
+    }
+
+    100% {
+        transform: translateY(-20vh) translateX(10px) scale(1.1);
+        opacity: 0;
+    }
+}
