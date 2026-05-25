@@ -13,6 +13,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.querySelector(".close-btn");
     const memoryBtn = document.querySelector(".memory-btn");
     const backBtn = document.querySelector(".back-btn");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+
+
+
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.classList.remove("hidden");
+        lightboxImg.src = img.src;
+    });
+});
+
+lightbox.addEventListener("click", () => {
+    lightbox.classList.add("hidden");
+    lightboxImg.src = "";
+});
 
     /* AUDIO */
     const clickSound = new Audio("music/click.mp3");
