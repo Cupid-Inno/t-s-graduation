@@ -270,7 +270,9 @@ html, body{
     backdrop-filter: blur(10px);
 }
 .journey-card h1{
-    background: #a855f7;
+        font-size: 1.2rem;
+        background: linear-gradient(135deg, #0b0710, #6d28d9);
+        padding: 10px 20px;
     border-radius: 30px;
      color: rgb(249, 246, 250);
 }
@@ -278,6 +280,7 @@ html, body{
 
 /* BUTTON ALWAYS CENTER */
 .close-btn{
+    
     margin-top: 10px;
     padding: 12px 24px;
     border-radius: 25px;
