@@ -406,3 +406,27 @@ html, body{
     }
 
 }
+.lightbox{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.lightbox img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(168,85,247,0.6);
+    transform: scale(0.9);
+    animation: pop 0.2s ease forwards;
+}
+
+@keyframes pop{
+    to{
+        transform: scale(1);
+    }
+}
