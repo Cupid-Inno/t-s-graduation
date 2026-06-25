@@ -90,6 +90,9 @@ h2{
     transform: scale(1.03);
      box-shadow: 0 0 15px purple;
 }
+.view{
+    height: 300px;
+}
 /* buttons */
 
 .memory-btn,
