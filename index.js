@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ELEMENTS */
     const loader = document.getElementById("loader");
     const fill = document.querySelector(".loading-fill");
     const percent = document.getElementById("percentage");
@@ -66,7 +65,7 @@ lightbox.addEventListener("click", () => {
 
     heroBtn.addEventListener("click", () => {
 
-        clickSound.currentTime = 0;
+        
         clickSound.play().catch(()=>{});
 
         hero.style.opacity = "0";
@@ -95,6 +94,9 @@ lightbox.addEventListener("click", () => {
     /* ================= CLOSE JOURNEY ================= */
 
     closeBtn.addEventListener("click", () => {
+          clickSound.pause();
+    
+
 
         journey.style.opacity = "0";
         journey.style.transform = "translateY(20px)";
