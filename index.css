@@ -11,6 +11,11 @@ html, body{
     background: #0b0b10;
     color: white;
 }
+h2{
+    font-family:'Times New Roman', Times, serif;
+    color:gold;
+
+}
 /* ================= MEMORIES ================= */
 .gallery p{
     font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -67,7 +72,7 @@ html, body{
 
 .gallery img{
     width: 100%;
-    height: 180px;
+    height: 220px;
 
     object-fit: cover;
 
@@ -190,6 +195,7 @@ html, body{
 
 .hero h1{
     font-size: 2.8rem;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .hero-message{
@@ -203,6 +209,10 @@ html, body{
     border-radius: 25px;
     background: linear-gradient(135deg, #a855f7, #6d28d9);
     color: white;
+}
+.hero-btn:hover{
+    background:purple;
+    color: #ffffff;
 }
 
 /* floating background */
@@ -254,8 +264,8 @@ html, body{
 
 .journey-card{
     width: 90%;
-    height: 400px;
-    max-width: 400px;
+    height: 450px;
+    max-width: 430px;
     background: rgba(255,255,255,0.05);
     border-radius: 20px;
     padding: 25px;
@@ -409,7 +419,7 @@ html, body{
 .lightbox{
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.055);
     display: flex;
     justify-content: center;
     align-items: center;
